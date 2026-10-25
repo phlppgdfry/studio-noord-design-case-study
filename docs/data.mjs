@@ -5,7 +5,8 @@ export const links={
   draw:'https://www.figma.com/design/TvSQScyVugajxezjknx1ff?node-id=1-600',
   motion:'https://www.figma.com/design/TvSQScyVugajxezjknx1ff?node-id=3-6759&timeline=keyframe',
   figjam:'https://www.figma.com/board/wyq7X0mYl5JVh9CGuoW4V3',
-  slides:'https://www.figma.com/slides/Nft4EWn5MTqEshKBHda0ul',
+  slides:'https://www.figma.com/slides/tZ9ynsDG41cgBAsAAk4Bjd',
+  tutorial:'https://www.figma.com/slides/Nft4EWn5MTqEshKBHda0ul',
   make:'https://www.figma.com/make/eiLRRJj6QYU0HNREZYZkLz?fullscreen=1'
 };
 export const evidence=[
@@ -14,7 +15,7 @@ export const evidence=[
   {id:'E03',title:'Brush studies',module:'Draw',status:'Native Figma',detail:'Vier native 16px-streken: 2× Heist stretch en 2× Shoegaze scatter. Pagina 03.',url:links.draw},
   {id:'E04',title:'Animatie met keyframes',module:'Motion',status:'Native Figma',detail:'4 seconden, 5 vormlagen, 7 tracks en 21 keyframes; afspelen getest in Figma Motion.',url:links.motion},
   {id:'E05',title:'Workshop & klantreis',module:'FigJam',status:'Native Figma',detail:'6 gebieden, brainstorm, impact/inspanning en een afgeronde oefenstemming met 3 demostemmen.',url:links.figjam},
-  {id:'E06',title:'Presentatie & publieksvraag',module:'Slides',status:'Native Figma',detail:'Eigen PG-cover, live poll met 4 keuzes, notities en 59 Figma Community-tutorialslides. Geen zelfgeschreven 59-slide case.',url:links.slides},
+  {id:'E06',title:'Eigen portfolio-pitch',module:'Slides',status:'Native Figma',detail:'Zes eigen native casedia’s: vraag, vier producten, flow, ontwerpafwegingen en vervolgstap. Het tutorialdeck met poll blijft een apart oefenbestand.',url:links.slides},
   {id:'E07',title:'Oorspronkelijke Make-showcase',module:'Make',status:'Webdemo',detail:'8 hoofdstukken met interactieve voorbeelden; simulaties staan los van native Figma-documenten.',url:links.make},
   {id:'E08',title:'Boekingsregels & broncode',module:'Engineering',status:'Repository',detail:'Pure functies voor capaciteit, validatie, bedragen in centen en herhaalde bevestigingen. Uitvoerbaar met npm test.',url:links.repository+'/tree/main/tests'},
   {id:'E09',title:'Beslissingen & overdracht',module:'Product',status:'Repository',detail:'Hypotheses, ontwerpafwegingen, toegankelijkheid, acceptatiecriteria en vervolgstappen.',url:links.repository+'/tree/main/case-study'},

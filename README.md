@@ -4,6 +4,8 @@
 
 [Open de portfolio-site](https://phlppgdfry.github.io/studio-noord-design-case-study/) · [Start de 2-minutentour](https://phlppgdfry.github.io/studio-noord-design-case-study/?tour#playground) · [Open Figma](https://www.figma.com/design/TvSQScyVugajxezjknx1ff) · [Native klikprototype](https://www.figma.com/proto/TvSQScyVugajxezjknx1ff?node-id=1-293&page-id=1%3A234&starting-point-node-id=1%3A293)
 
+[![Werkelijke desktopweergave van de portfolio-case](design/screenshots/portfolio-desktop.png)](https://phlppgdfry.github.io/studio-noord-design-case-study/)
+
 ## De vraag
 
 Hoe help je een nieuwsgierige festivalbezoeker een workshop te kiezen, zonder dat het programma als huiswerk voelt? De case verbindt de route van idee naar keuze, boeking en bevestiging. Het festival, de bezoekers en de workshopgegevens zijn fictief. De ervaring is geen echte ticketdienst.
@@ -21,8 +23,10 @@ Hoe help je een nieuwsgierige festivalbezoeker een workshop te kiezen, zonder da
 |---|---|---|
 | **[Design](https://www.figma.com/design/TvSQScyVugajxezjknx1ff)** | Design Lab, appschermen, klikprototype | 8 componentvarianten, 7 kleurvariabelen, Light/Dark-demoframes en Auto Layout. Op pagina 02: lijst → boeking → bevestiging → lijst. |
 | **[FigJam](https://www.figma.com/board/wyq7X0mYl5JVh9CGuoW4V3)** | Workshop & klantreis | 6 gebieden, brainstorm, impact/inspanning, timer en afgeronde oefenstemming met 3 demostemmen. |
-| **[Slides](https://www.figma.com/slides/Nft4EWn5MTqEshKBHda0ul)** | Feature Tour | Eigen PG-cover, eigen live poll met 4 keuzes, presentatornotities en overgangen. De volgende 59 slides komen uit het Figma Community-tutorialsjabloon. |
+| **[Slides](https://www.figma.com/slides/tZ9ynsDG41cgBAsAAk4Bjd)** | Eigen portfolio-pitch | 6 native casedia’s met ontwerpvraag, productroute, boekingsflow, afwegingen en vervolgstappen. Ook bewerkbaar op Design-pagina 04. |
 | **[Make](https://www.figma.com/make/eiLRRJj6QYU0HNREZYZkLz?fullscreen=1)** | Oorspronkelijke showcase | 8 hoofdstukken; boekingsflow, kleurmodi, posterpaletten, timeline, mini-board en pitch. |
+
+Apart oefenbestand: [Feature Tour met live poll](https://www.figma.com/slides/Nft4EWn5MTqEshKBHda0ul), met eigen PG-cover, een geteste publieksvraag met vier keuzes en 59 Figma Community-tutorialslides.
 
 **Binnen Design:** [Draw Brush Lab](https://www.figma.com/design/TvSQScyVugajxezjknx1ff?node-id=1-600) met 2 Heist- en 2 Shoegaze-streken; [Motion](https://www.figma.com/design/TvSQScyVugajxezjknx1ff?node-id=3-6759&timeline=keyframe) met 4 seconden, 5 vormlagen, 7 tracks en 21 native keyframes. Native bewijs is handmatig gecontroleerd op 25 oktober 2026. Figma-links behouden de bestaande toegangsrechten en kunnen om login vragen.
 

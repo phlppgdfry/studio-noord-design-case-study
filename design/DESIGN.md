@@ -19,3 +19,7 @@ Cream `#F5F2EA`, ink `#182821`, lime `#D4F668` en coral `#FF715B` behouden de be
 H1 en CTA-copy, navigatie, cream/ink/lime-verhouding, grootte en rangschikking van de drie previews, open versus omlijnde containers, donkere workbench-band, bewijstabel en smalle leesvolgorde. De bovenstaande aanpassingen zijn inhoudelijk gemotiveerde verschillen, geen ongecontroleerde visuele drift.
 
 Zie `case-study/validation.md` voor daadwerkelijk uitgevoerde browsercontroles. Het conceptbestand alleen is geen bewijs dat de implementatie overeenkomt.
+
+## Uitgevoerde visuele vergelijking
+
+Het concept en de desktoprender zijn naast elkaar bekeken. Vijf controles: (1) de tweeregelige hero en sans/italic-hiërarchie blijven herkenbaar; (2) cream, ink en lime blijven de dominante verdeling; (3) drie previews behouden de route lijst/detail/bevestiging, met de hierboven gemotiveerde geometrische inhoud; (4) de donkere werkbank onderscheidt interactie van de case-uitleg; (5) het bewijsregister en afwegingen blijven scanbaar met hairlines en kleine bronlabels. De langere inhoud is bewust toegevoegd voor een volledige portfolio-case. Mobiele visuele overeenkomst is nog niet vastgesteld; zie validatie.

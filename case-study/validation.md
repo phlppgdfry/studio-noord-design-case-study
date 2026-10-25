@@ -17,7 +17,22 @@ Dit register scheidt eerder gecontroleerde native artefacten van controles op de
 
 Automatische controles: `npm run check` en `npm test`. Tests bestrijken capaciteit, aantallen, validatie, idempotente herhaling, stale capacity, onbekende workshops, gecombineerde filters en centen.
 
-Browser-QA wordt na uitvoering hieronder vastgelegd. Status vóór de browsercontrole: nog niet vastgesteld.
+Browser-QA op 25 oktober 2026, Chrome op desktop (1920 px):
+
+- Tablist: pijltje rechts selecteert en focust de volgende tab; Home keert terug naar Boeken. Escape sluit de boekingsdialog en focus keert terug naar Bekijk workshop.
+- Rondleiding door alle zes stappen genavigeerd; afsluiten werkt.
+- Ongeldig formulier toont drie tekstfouten en verplaatst focus naar het naamveld.
+- Fictieve gegevens + twee plaatsen leveren €70 en een bevestiging; lokale capaciteit gaat van 6 naar 4. Dialog sluit.
+- Volzette workshop heeft een uitgeschakelde boekingsknop; lege zoekresultaten en wissen werken.
+- Donkere/compacte systeemvariant, posterpalet en SVG-download gebruikt.
+- Motion afgespeeld, gepauzeerd en gereset naar 0,00 seconden.
+- Sticky toegevoegd, drie stemmen uitgebracht; vierde stem geeft limietmelding.
+- Eigen webslides genavigeerd; tweede vooraf geschreven AI-variant geselecteerd.
+- Bewijsfilter toont één gepland onderzoekartefact. Geen eigen applicatiefouten in console; extensionmeldingen buiten de app zijn apart gehouden.
+- Zes native pitchframes aangetroffen in het lagenpaneel; gekopieerd naar een eigen Figma Slides-deck met zes dia’s.
+- Make-overzicht toont de nieuwe werkelijke portfolio- en GitHub-links plus vier ontwerpafwegingen.
+
+Mobiele browser-QA is nog niet vastgesteld: de viewportbediening meldde succes, maar `innerWidth` bleef 1920 px. Er wordt daarom geen geslaagde 390px-controle geclaimd. Responsive CSS is aanwezig; een echte mobiele controle blijft nodig.
 
 ## Grenzen
 
