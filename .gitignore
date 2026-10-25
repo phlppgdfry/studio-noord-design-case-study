@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.firecrawl/
+test-results/
+playwright-report/
+tmp/
+.env*

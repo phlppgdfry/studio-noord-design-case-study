@@ -1,0 +1,17 @@
+name: Check portfolio case
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Show runtime
+        run: node --version
+      - name: Check source and evidence contract
+        run: npm run check
+      - name: Test booking rules
+        run: npm test

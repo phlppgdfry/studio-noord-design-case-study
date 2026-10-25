@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {workshops,validateBooking,createBooking,filterWorkshops,euro} from '../docs/model.mjs';
+const valid={workshopId:'vorm',quantity:2,name:'Mila Janssens',email:'mila@example.test',consent:true,idempotencyKey:'test-request-001'};
+const stock=()=>workshops.map(w=>({...w}));
+test('a valid booking reduces stock and calculates integer cents',()=>{const input=stock(),result=createBooking(input,valid);assert.equal(result.booking.total,7000);assert.equal(result.inventory[0].available,4);assert.equal(input[0].available,6);});
+test('sold-out workshops cannot be booked',()=>{const result=createBooking(stock(),{...valid,workshopId:'letter'});assert.match(result.errors.quantity,/volzet/);assert.equal(result.inventory[1].available,0);});
+test('rejects fractional, negative, zero and over-capacity quantities',()=>{for(const quantity of [0,-1,1.5,7,NaN,Infinity,'2']){const result=createBooking(stock(),{...valid,quantity});assert.ok(result.errors.quantity,`rejected ${quantity}`);assert.equal(result.inventory[0].available,6);}});
+test('all validation errors are reported without changing inventory',()=>{const result=createBooking(stock(),{...valid,name:' ',email:'not-an-email',consent:false});assert.deepEqual(Object.keys(result.errors).sort(),['consent','email','name']);assert.equal(result.inventory[0].available,6);});
+test('name and email length bounds prevent unbounded input',()=>{assert.ok(validateBooking({...valid,workshop:workshops[0],name:'x'.repeat(81)}).name);assert.ok(validateBooking({...valid,workshop:workshops[0],email:'x'.repeat(255)+'@example.test'}).email);});
+test('repeat confirmation with same idempotency key does not consume more stock',()=>{const first=createBooking(stock(),valid);const repeated=createBooking(first.inventory,valid,first.booking);assert.deepEqual(repeated.booking,first.booking);assert.equal(repeated.inventory[0].available,4);});
+test('a second request checks latest remaining capacity',()=>{const first=createBooking(stock(),{...valid,quantity:5});const second=createBooking(first.inventory,{...valid,quantity:2,idempotencyKey:'second'});assert.ok(second.errors.quantity);assert.equal(second.inventory[0].available,1);});
+test('missing workshop and request key are rejected',()=>{assert.ok(createBooking(stock(),{...valid,workshopId:'missing'}).errors.workshop);assert.ok(createBooking(stock(),{...valid,idempotencyKey:''}).errors.request);});
+test('search, category and favorites intersect without mutating source',()=>{const items=stock();assert.equal(filterWorkshops(items,{query:'NOOR',category:'Motion',favorites:['vorm']}).length,1);assert.equal(filterWorkshops(items,{query:'Noor',category:'Grafisch'}).length,0);assert.equal(filterWorkshops(items,{favorites:[]}).length,0);assert.equal(items.length,3);});
+test('EUR formatting preserves cents',()=>{assert.match(euro(3500),/35,00/);assert.match(euro(1),/0,01/);});
