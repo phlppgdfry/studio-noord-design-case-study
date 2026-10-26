@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F2EA"/>
+  <g fill="#182821" font-family="Arial,sans-serif">
+    <text x="64" y="78" font-size="28" font-weight="700">studio noord</text>
+    <text x="64" y="221" font-size="73" font-weight="700" letter-spacing="-4">Van eerste idee</text>
+    <text x="64" y="303" font-size="73" font-weight="700" letter-spacing="-4">naar echte</text>
+    <text x="64" y="390" font-size="83" font-family="Georgia,serif" font-style="italic" letter-spacing="-4">interactie.</text>
+    <text x="64" y="462" font-size="23">Vier Figma-producten. Eén samenhangende case.</text>
+    <text x="64" y="556" font-size="17" font-family="monospace">PHILIPPE GODFROY / ZELFSTANDIGE OEFENCASE</text>
+  </g>
+  <rect x="863" y="133" width="273" height="362" rx="9" fill="#D4F668"/>
+  <path d="M920 166v80a70 70 0 1 0 70 70h-70v108h-38V166z" fill="#182821"/>
+  <path d="M1038 166a112 112 0 0 1 0 224z" fill="#182821"/>
+  <circle cx="1098" cy="440" r="24" fill="#FF715B"/>
+  <path d="M64 110h1072M64 514h1072" stroke="#182821" stroke-opacity=".22"/>
+  <text x="1136" y="78" text-anchor="end" font-family="monospace" font-size="16" fill="#182821">DESIGN → PROTOTYPE → BEWIJS</text>
+</svg>

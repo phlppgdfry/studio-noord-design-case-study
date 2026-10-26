@@ -13,14 +13,14 @@ De implementatie gebruikt semantische HTML, gelabelde controls en een native dia
 | A05 | Volzet kan geen boekingsflow starten; aantallen blijven binnen de lokale capaciteit. | Browser + unit tests |
 | A06 | Bedragen blijven in gehele centen tot de presentatie; herhaalde aanvraag verbruikt geen extra voorraad. | Unit tests |
 | A07 | Motion speelt niet automatisch, is te pauzeren en heeft een bestuurbare tijdlijn. | Browser |
-| A08 | Reduced motion voorkomt automatisch smooth scrollen en CSS-transities; handmatig afspelen is expliciet. | CSS/JS-inspectie; OS-instelling nog apart te testen |
+| A08 | Reduced motion voorkomt automatisch smooth scrollen en CSS-transities; handmatig afspelen is expliciet. | CSS/JS-inspectie; browseremulatie van reduced motion getest; fysieke OS-instelling nog apart te testen |
 | A09 | Op 390 px en desktop is de primaire inhoud leesbaar zonder documentbrede horizontale overflow. De bewijstabel heeft bewust een eigen scrollcontainer. | Browser |
 | A10 | Fout-, volzet- en successtaten gebruiken tekst naast kleur. | Browser |
 | A11 | Formuliergegevens verlaten het tabblad niet en komen niet in localStorage. | Code-inspectie |
 
 ## Contrast en focus
 
-De basis gebruikt ink `#182821` op cream `#F5F2EA` en ink op lime `#D4F668`. Coral is een expressie- en focusaccent, geen kleur voor kleine bodytekst op cream. Focus krijgt een 3px-contour met offset. Controls krijgen doorgaans een minimumdoel van 44px. Kleine stemknoppen op het oefenboard zijn 32px hoog; dit blijft een aandachtspunt voor een volledige touch-audit.
+De basis gebruikt ink `#182821` op cream `#F5F2EA` en ink op lime `#D4F668`. Coral is een expressie- en focusaccent, geen kleur voor kleine bodytekst op cream. Focus krijgt een 3px-contour met offset. Controls krijgen doorgaans een minimumdoel van 44px. Ook de stemknoppen op het oefenboard hebben nu een minimumhoogte van 44px.
 
 ## Nog expliciet te testen
 

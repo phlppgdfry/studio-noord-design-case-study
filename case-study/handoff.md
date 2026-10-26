@@ -23,18 +23,19 @@ Dit beschermt de lokale demonstratie. Een echte reserveringsdienst vereist een s
 
 ## Publicatie en onderhoud
 
-GitHub Pages publiceert `main:/docs`; `.nojekyll` voorkomt Jekyll-verwerking. De site is statisch en gebruikt relatieve paden. CI draait `npm run check` en `npm test`. Er is geen npm-installatie nodig.
+GitHub Pages publiceert `main:/docs`; `.nojekyll` voorkomt Jekyll-verwerking. De site is statisch en gebruikt relatieve paden. CI draait `npm run check` en `npm test`. De site heeft geen runtime-afhankelijkheden. Voor de browserchecks zijn npm ci en de Playwright-browsers nodig.
 
 Bij een wijziging: regels → tests → browserflow → smal scherm → bronclaims → documentatie. Een geslaagde syntaxcheck zegt niets over de zichtbare UI; browser-QA blijft nodig.
 
 ## Figma-route
 
 1. Pagina 01: Design Lab, componenten, kleuren, schermen, poster en native Motion.
-2. Pagina 02: kopieën van de appframes voor het klikprototype. Schermbrede On click → Navigate to-acties tonen de volgorde.
+2. Pagina 02: kopieën van de appframes voor het klikprototype. Gerichte knopacties tonen de volgorde en terugroutes; aparte fout-/volzetframes staan op dezelfde pagina. De vijf mobiele roots zijn 390×844 met verticaal scrollen.
 3. Pagina 03: Draw Brush Lab, met 2 Heist- en 2 Shoegaze-streken.
+4. Pagina 04: zes eigen portfolioframes; gekopieerd naar het native Slides-deck https://www.figma.com/slides/tZ9ynsDG41cgBAsAAk4Bjd met zes presentatornotities.
 
 De screenshots van de site zijn geen bewijs dat een Figma-node een component of keyframe is. Daarvoor moet het native bronbestand worden geopend. Deelrechten van Figma zijn niet automatisch gewijzigd voor de repository.
 
 ## Grenzen voor productie
 
-Geen betalingen, e-mail, authenticatie, multi-user board of live AI. Geen analytics, geen echte bezoekerdata. Het casedeck heeft zes eigen webslides; het gelinkte native deck bevat aangepast plus Figma Community-tutorialmateriaal. Een volledige usability- en toegankelijkheidsaudit blijft nodig vóór productiegebruik.
+Geen betalingen, e-mail, authenticatie, multi-user board of live AI. Geen analytics, geen echte bezoekerdata. Het casedeck heeft zes eigen webslides en een eigen native zesdia-pitch. Het afzonderlijke Feature Tour-deck bevat aangepast plus Figma Community-tutorialmateriaal. Een volledige usability- en toegankelijkheidsaudit blijft nodig vóór productiegebruik.

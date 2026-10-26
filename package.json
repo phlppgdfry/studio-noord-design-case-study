@@ -1,13 +1,23 @@
 {
   "name": "studio-noord-design-case-study",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "An evidence-led Figma product design case and independent interactive portfolio.",
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 4178 --directory docs --bind 127.0.0.1",
     "test": "node --test tests/*.test.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "test:e2e": "playwright test",
+    "assets:social": "node scripts/render-social.mjs",
+    "audit:public-links": "node scripts/check-public-links.mjs",
+    "evidence:capture": "node scripts/capture-evidence.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1"
+  }
 }

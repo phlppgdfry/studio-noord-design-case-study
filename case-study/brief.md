@@ -18,7 +18,7 @@ De onderzochte route is programma → detail → boeking → bevestiging. Het na
 
 ## Artefacten en verantwoordelijkheid
 
-FigJam bevat verkenning en oefenstemming. Design bevat componenten, variabelen, responsive schermen, Draw en Motion. Slides bevat een aangepaste cover, eigen publieksvraag en gelinkt tutorialmateriaal. Make bevat de oorspronkelijke interactieve webverkenning. De repository bevat een zelfstandige webimplementatie, documentatie en tests.
+FigJam bevat verkenning en oefenstemming. Design bevat componenten, variabelen, responsive schermen, Draw en Motion. Slides bevat een eigen zesdia-pitch met presentatornotities. Een apart Feature Tour-bestand bevat een eigen cover, publieksvraag en gelinkt tutorialmateriaal. Make bevat de oorspronkelijke interactieve webverkenning. De repository bevat een zelfstandige webimplementatie, documentatie en tests.
 
 Philippe Godfroy selecteert en beoordeelt het resultaat met AI-assistentie. Dat beschrijft eigenaarschap en werkwijze; het stelt geen senior functietitel of zelfstandig uitgevoerde gebruikersonderzoeken vast.
 

@@ -32,3 +32,7 @@ Noteer per taak: zelfstandig afgerond, afgerond met hulp of niet afgerond; route
 | Nog niet uitgevoerd | — | — | — | — | — |
 
 De eerste iteratie na onderzoek moet de belangrijkste blokkade aanpakken. Een productie-backend of live AI-integratie is geen vervanging voor dit bewijs.
+
+## Uitvoerbare materialen en afzonderlijke expertreview
+
+[Testscript en toestemmingsprocedure](../docs/research/session-kit.md) · [Leeg observatieformulier](../docs/research/session-results.csv). Het CSV-bestand bevat geen fictieve sessies. Op verzoek is een taakgerichte expertreview uitgevoerd; zie [de bevindingen](expert-review.md). Een inspectie door de maker met AI-assistentie is geen gebruikersonderzoek en vervangt de vijf geplande sessies niet.

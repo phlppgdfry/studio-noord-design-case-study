@@ -4,6 +4,11 @@ export const workshops = [
   {id:'druk',title:'Druk je eigen richting',category:'Grafisch',host:'Lotte Jacobs',time:'16:00–18:00',price:3000,available:3,shape:2,description:'Van schets naar een eigen grafische afdruk. Werk met vorm, herhaling en onverwachte kleurcombinaties.'}
 ];
 export const euro = cents => new Intl.NumberFormat('nl-BE',{style:'currency',currency:'EUR',maximumFractionDigits:2}).format(cents/100);
+export const eventDetails={date:'19 juni 2027',venue:'De Winkelhaak · Antwerpen'};
+export const initialMotion=()=>({elapsed:0,duration:4000,easing:'ease-in-out',playing:false});
+export function initialDemoState(favorites=[]) {
+  return {tab:'boeken',inventory:workshops.map(w=>({...w})),selected:'vorm',query:'',category:'Alles',favorites:[...favorites],favoritesOnly:false,mode:'light',density:'comfortable',palette:0,slide:0,prompt:0,votes:new Set(),notes:[{id:1,column:'Probleem',text:'Het aanbod is inspirerend, maar wat past bij mij?'},{id:2,column:'Idee',text:'Toon tijd, discipline en vrije plaatsen vóór de detailstap.'},{id:3,column:'Experiment',text:'Laat vijf deelnemers een passende workshop kiezen.'}],nextNote:4,evidence:'Alles',booking:null};
+}
 export function validateBooking({workshop,quantity,name,email,consent}) {
   const errors={};
   if(!workshop) return {workshop:'Kies een bestaande workshop.'};
@@ -19,7 +24,7 @@ export function createBooking(inventory,input,previous=null) {
   const errors=validateBooking({...input,workshop});
   if(Object.keys(errors).length) return {errors,inventory};
   if(typeof input.idempotencyKey!=='string'||!input.idempotencyKey) return {errors:{request:'Start de boeking opnieuw.'},inventory};
-  const booking={reference:`SN-DEMO-${input.idempotencyKey.slice(-6).toUpperCase()}`,idempotencyKey:input.idempotencyKey,workshopId:workshop.id,title:workshop.title,quantity:input.quantity,total:workshop.price*input.quantity,name:input.name.trim()};
+  const booking={reference:`SN-DEMO-${input.idempotencyKey.slice(-6).toUpperCase()}`,idempotencyKey:input.idempotencyKey,workshopId:workshop.id,title:workshop.title,time:workshop.time,...eventDetails,quantity:input.quantity,total:workshop.price*input.quantity,name:input.name.trim()};
   return {booking,inventory:inventory.map(item=>item.id===workshop.id?{...item,available:item.available-input.quantity}:{...item})};
 }
 export function filterWorkshops(items,{query='',category='Alles',favorites=null}={}) {

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {workshops,validateBooking,createBooking,filterWorkshops,euro} from '../docs/model.mjs';
+import {workshops,validateBooking,createBooking,filterWorkshops,euro,initialDemoState,initialMotion} from '../docs/model.mjs';
 const valid={workshopId:'vorm',quantity:2,name:'Mila Janssens',email:'mila@example.test',consent:true,idempotencyKey:'test-request-001'};
 const stock=()=>workshops.map(w=>({...w}));
 test('a valid booking reduces stock and calculates integer cents',()=>{const input=stock(),result=createBooking(input,valid);assert.equal(result.booking.total,7000);assert.equal(result.inventory[0].available,4);assert.equal(input[0].available,6);});
@@ -13,3 +13,5 @@ test('a second request checks latest remaining capacity',()=>{const first=create
 test('missing workshop and request key are rejected',()=>{assert.ok(createBooking(stock(),{...valid,workshopId:'missing'}).errors.workshop);assert.ok(createBooking(stock(),{...valid,idempotencyKey:''}).errors.request);});
 test('search, category and favorites intersect without mutating source',()=>{const items=stock();assert.equal(filterWorkshops(items,{query:'NOOR',category:'Motion',favorites:['vorm']}).length,1);assert.equal(filterWorkshops(items,{query:'Noor',category:'Grafisch'}).length,0);assert.equal(filterWorkshops(items,{favorites:[]}).length,0);assert.equal(items.length,3);});
 test('EUR formatting preserves cents',()=>{assert.match(euro(3500),/35,00/);assert.match(euro(1),/0,01/);});
+test('receipt snapshots the selected time and event details',()=>{const receipt=createBooking(stock(),{...valid,workshopId:'druk'}).booking;assert.equal(receipt.time,'16:00–18:00');assert.equal(receipt.date,'19 juni 2027');assert.equal(receipt.venue,'De Winkelhaak · Antwerpen');});
+test('reset state is independent and includes every lab default',()=>{const old=initialDemoState(['vorm']);old.notes[0].text='edited';old.inventory[0].available=0;old.votes.add(1);const fresh=initialDemoState();assert.deepEqual(fresh.favorites,[]);assert.equal(fresh.inventory[0].available,6);assert.notEqual(fresh.notes[0].text,'edited');assert.equal(fresh.votes.size,0);assert.equal(fresh.nextNote,4);assert.equal(fresh.palette,0);assert.equal(fresh.slide,0);assert.equal(fresh.prompt,0);assert.equal(fresh.evidence,'Alles');assert.deepEqual(initialMotion(),{elapsed:0,duration:4000,easing:'ease-in-out',playing:false});});

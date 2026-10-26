@@ -17,6 +17,11 @@ assert.equal(decisions.length,4);
 JSON.parse(await readFile(resolve(root,'docs/assets/tokens.json'),'utf8'));
 const required=['README.md','case-study/brief.md','case-study/decisions.md','case-study/research-plan.md','case-study/accessibility.md','case-study/handoff.md','case-study/validation.md','design/DESIGN.md'];
 for(const path of required){assert.ok((await readFile(resolve(root,path),'utf8')).length>150,`${path} needs substantive content`);}
+for(const path of ['case-study/expert-review.md','docs/research/session-kit.md'])assert.ok((await readFile(resolve(root,path),'utf8')).length>500);
+assert.equal((await readFile(resolve(root,'docs/research/session-results.csv'),'utf8')).trim().split('\n').length,1,'Do not fabricate participant results');
+assert.ok(html.includes('property="og:image"'));assert.ok(html.includes('rel="canonical"'));
+const social=await readFile(resolve(root,'docs/assets/studio-noord-social.png'));
+assert.equal(social.readUInt32BE(16),1200);assert.equal(social.readUInt32BE(20),630);
 const publicFiles=await readdir(resolve(root,'docs'));
 assert.ok(publicFiles.includes('.nojekyll'));
 console.log('PASS: JavaScript syntax, local assets, HTML ids, evidence links, tokens and case dossier.');

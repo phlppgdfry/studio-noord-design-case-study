@@ -32,23 +32,28 @@ Apart oefenbestand: [Feature Tour met live poll](https://www.figma.com/slides/Nf
 
 ## Wat de upgrade toevoegt
 
+- Een taakgerichte [expertreview met voor/na-iteratie](case-study/expert-review.md), twee opnieuw afgewogen ontwerprichtingen en expliciete rolverdeling.
 - Een zelfstandig toegankelijk webportfolio met case, beslissingen, bronverwijzingen en compacte rondleiding.
 - Een lokale boekingsflow met foutmeldingen, capaciteitscontrole, bedragen in gehele centen en bescherming tegen een herhaalde bevestiging binnen dezelfde aanvraag.
 - Expliciete states: geselecteerd, favoriet, leeg zoekresultaat, volzet, foutief formulier en bevestigd.
 - Een webdesignlab met tokens/modes, SVG-export, bestuurbare animatie, mini-board, zes eigen casedia’s en kopieerbare prompts.
+- Mobiele reflow, toetsenbord- en focusherstel, browserregressies in Chromium en WebKit en een deelafbeelding voor berichten.
 - Een [bewijsregister](docs/data.mjs), [beslissingslog](case-study/decisions.md), [onderzoeksplan](case-study/research-plan.md), [overdracht](case-study/handoff.md), uitvoerbare tests en CI.
 
 Deze website is **een eigen implementatie op basis van het Figma-concept**, geen automatische export van het Make-project. Native Figma-artefacten en websimulaties zijn afzonderlijk gelabeld. Er is geen backend, betaalprovider, analytics of live AI-aanroep.
 
 ## Reproduceer lokaal
 
-Node.js 20+ voor checks/tests; Python 3 voor de lokale server. Er zijn geen npm-afhankelijkheden.
+Node.js 20+ voor checks/tests; Python 3 voor de lokale server. De gepubliceerde site heeft geen runtime-afhankelijkheden. Playwright en axe-core zijn ontwikkelafhankelijkheden voor browsertests.
 
 ```sh
 git clone https://github.com/phlppgdfry/studio-noord-design-case-study.git
 cd studio-noord-design-case-study
+npm ci
 npm run check
 npm test
+npx playwright install chromium webkit
+npm run test:e2e
 npm start
 # Open http://127.0.0.1:4178
 ```
@@ -58,12 +63,20 @@ Publicatie: GitHub Pages vanuit `main:/docs`. De site gebruikt relatieve paden e
 ```text
 docs/                 gepubliceerde site, interacties en boekingsmodel
 docs/assets/          handmatige tokens en eigen favicon
-case-study/           brief, keuzes, onderzoek, toegankelijkheid, overdracht, validatie
+case-study/           brief, keuzes, expertreview, onderzoek, overdracht en validatie
 design/               visueel concept en implementatie-afwegingen
-tests/                uitvoerbare grensgevallen voor de boekingsregels
+tests/                12 modeltests en 10 browserflows × 6 configuraties
 scripts/check.mjs     bron-, asset- en bewijscontractcontrole
 .github/workflows/    CI voor checks en tests
 ```
+
+## Controle en deelbaarheid
+
+De browserflows draaien op Chromium-desktop 1440px, Chromium 320px, mobiel Chromium 390px, tablet 768px, mobiel WebKit 390px en WebKit-desktop 1280px. Ze controleren validatie, compleet tijdslot, voorraad, volzet, filters, volledige reset, focusherstel, rondleiding, reflow en geautomatiseerde WCAG-regels. Een automatische scan is geen volledige toegankelijkheidsaudit.
+
+De site bevat native previews die zonder Figma-account te bekijken zijn. Design, FigJam, Make en het eigen Slides-deck staan in de Figma-deeldialoog op **Anyone can view**. De anonieme testbrowser kreeg voor die native bronnen een CDN-403; externe toegang is daarom niet als end-to-end geslaagd geregistreerd. Zie het [validatieregister](case-study/validation.md).
+
+[Mobiele webweergave](design/screenshots/portfolio-mobile-390.png) · [Bevestiging met tijdslot](design/screenshots/booking-mobile-390.png) · [Testscript](docs/research/session-kit.md) · [Leeg observatieformulier](docs/research/session-results.csv)
 
 ## Grenzen en volgende stap
 
