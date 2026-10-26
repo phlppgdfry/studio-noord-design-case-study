@@ -78,6 +78,12 @@ De site bevat native previews die zonder Figma-account te bekijken zijn. Design,
 
 [Mobiele webweergave](design/screenshots/portfolio-mobile-390.png) · [Bevestiging met tijdslot](design/screenshots/booking-mobile-390.png) · [Testscript](docs/research/session-kit.md) · [Leeg observatieformulier](docs/research/session-results.csv)
 
+Live tests uitvoeren tegen de gepubliceerde submap:
+
+```sh
+PORTFOLIO_URL=https://phlppgdfry.github.io/studio-noord-design-case-study/ npm run test:e2e
+```
+
 ## Grenzen en volgende stap
 
 Geen interviews, usabilitysessies of conversie-experimenten zijn uitgevoerd. Het [onderzoeksplan](case-study/research-plan.md) is een voorstel. Native overlays en Smart Animate zijn nog geen onderdeel van de geverifieerde case. De native prototypeflow gebruikt schermbrede klikacties; alleen de webflow heeft echte invoervelden en voorraadlogica. De demo-voorraad is per tabblad en biedt geen transactieve multi-user reserveringen. Het live mini-board deelt geen gegevens tussen bezoekers.

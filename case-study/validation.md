@@ -6,7 +6,7 @@ Bijgewerkt op 26 oktober 2026 voor versie 2.1. Softwarechecks en expertreview zi
 
 - `npm run check`: syntax, lokale assets, HTML-IDs, bronlinks, tokens, case-documentatie, 1200×630-deelafbeelding en leeg deelnemersformulier. Geslaagd.
 - `npm test`: 12 geslaagde modeltests voor capaciteit, validatie, bedragen in centen, herhaalde aanvragen, filters, tijdslot in de bevestiging en een onafhankelijke volledige beginstaat.
-- `npm run test:e2e`: 10 browserflows × 6 configuraties = 60 geslaagde controles op macOS. De GitHub Actions-run is de bron voor de afzonderlijke Linux-CI-resultaten.
+- `npm run test:e2e`: 10 browserflows × 6 configuraties = 60 geslaagde controles op macOS. Ook de [Linux-CI met validatie en browserjob](https://github.com/phlppgdfry/studio-noord-design-case-study/actions/runs/40358919223) is geslaagd voor de gepubliceerde versie 8c8152e.
 
 | Configuratie | Engine | Viewport | Type |
 |---|---|---|---|
@@ -20,6 +20,10 @@ Bijgewerkt op 26 oktober 2026 voor versie 2.1. Softwarechecks en expertreview zi
 Per configuratie: pagina-identiteit en inhoud, geen runtimefouten, geen documentbrede horizontale uitloop in alle zeven labs, validatie en herstel, volledige boekingsbevestiging, voorraad, volzet, lege zoekresultaten, favorieten, complete reset, focus bij verdwijnende/disabled controls, tablist-toetsen, modal/Escape, rondleiding, reduced-motion-mediaemulatie, opengeklapte voor/na-case, openbare assets en de directe workshoplink.
 
 Axe controleert elk van de zeven labs en het boekingsdialog met WCAG A/AA-tags, inclusief 2.1 en beschikbare 2.2-regels. Geen gerapporteerde overtredingen in deze gecontroleerde toestanden. Dat bewijst geen volledige WCAG-conformiteit. Screenshotbestanden staan onder `design/screenshots/`; de mobiele beelden zijn echte browserrenders, geen mockups. De oude viewportbediening die 1920 px bleef tonen is vervangen door echte Playwright-contexten.
+
+## Rechtstreeks op de gepubliceerde site
+
+Na publicatie zijn dezelfde tien flows uitgevoerd tegen de GitHub Pages-submap in desktop-Chromium en mobiel WebKit: **20 van 20 geslaagd**. Daarbij is een lege browsercontext gebruikt; de native previews en onderzoeksdownloads waren zonder Figma-login bereikbaar. De testconfiguratie behoudt de submap bij relatieve navigatie.
 
 ## Native Figma — handmatig in editor en speler
 
@@ -43,7 +47,7 @@ Op 26 oktober:
 | Formulierfout | Herstel `15:785` | Detail | URL `1:318` |
 | Formulierfout | Terug `15:728` | Lijst | URL `1:293` |
 
-Een klik op niet-interactieve achtergrondtekst ging niet verder. Klikken op de volzetknop reserveerde niets en veranderde niet van frame. De native velden, filters en aantallen blijven illustratief. Echte lokale validatie en voorraadregels horen bij de zelfstandige webimplementatie. De derde kaart is expliciet als externe webdemoroute benoemd; de uiteindelijke koppeling wordt in de releasecontrole bevestigd.
+Een klik op niet-interactieve achtergrondtekst ging niet verder. Klikken op de volzetknop reserveerde niets en veranderde niet van frame. De native velden, filters en aantallen blijven illustratief. Echte lokale validatie en voorraadregels horen bij de zelfstandige webimplementatie. De derde kaart `1:314` heeft daarnaast een On click → Open link-actie. Een werkelijke klik op Open in webdemo opende de gepubliceerde site met `?workshop=druk#playground`, met Druk je eigen richting geselecteerd. Een demoboeking van twee plaatsen bevestigde 16:00–18:00 en €60,00. Het nieuwe tabblad opent via Figma’s normale uitgaande-linkroute.
 
 ## Deelbaarheid en uitgelogde controle
 
@@ -51,7 +55,7 @@ In de deeldialogen van Design, het prototype zelf, FigJam, het eigen Slides-deck
 
 De afzonderlijke, lege Playwright-context had geen Figma-cookies of ingelogd gebruikersprofiel. Design, FigJam en Slides kregen een CDN-403; het prototype laadde daarin niet volledig en Make toonde geen voldoende inhoudsbewijs. Dat is geen geslaagde externe toegangstest en evenmin bewijs van een private instelling. `npm run audit:public-links` rapporteert onduidelijkheid met exitcode 2. Deze onzekerheid wordt niet verborgen door een groene CI-check.
 
-De onafhankelijke portfoliosite en de daar aangeboden native editorpreviews zijn publiek te bekijken zonder Figma-login. De lokale browserchecks bevestigen dat alle preview-assets en onderzoeksdownloads bestaan. Live publicatiecontrole en CI worden na het pushen afzonderlijk gecontroleerd.
+De onafhankelijke portfoliosite en de daar aangeboden native editorpreviews zijn publiek te bekijken zonder Figma-login. De lokale browserchecks bevestigen dat alle preview-assets en onderzoeksdownloads bestaan. [GitHub Pages-publicatie](https://github.com/phlppgdfry/studio-noord-design-case-study/actions/runs/40358917470) is geslaagd. De live route van Figma naar de juiste workshop en de bevestiging van twee plaatsen zijn daarna handmatig gecontroleerd.
 
 ## Grenzen
 

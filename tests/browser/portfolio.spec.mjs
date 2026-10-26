@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test.beforeEach(async({page})=>{await page.goto('/');await expect(page.getByRole('tab',{name:'Boeken',exact:true})).toBeVisible();});
+test.beforeEach(async({page})=>{await page.goto('./');await expect(page.getByRole('tab',{name:'Boeken',exact:true})).toBeVisible();});
 async function tab(page,name){await page.getByRole('tab',{name,exact:true}).click();}
 async function noOverflow(page){expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);}
 
@@ -85,7 +85,7 @@ test('keyboard tabs, modal focus containment and Escape work',async({page})=>{
   await expect(page.getByRole('button',{name:'Bekijk workshop',exact:true})).toBeFocused();
 });
 test('Figma deep link selects the intended workshop without creating a booking',async({page})=>{
-  await page.goto('/?workshop=druk#playground');
+  await page.goto('./?workshop=druk#playground');
   await expect(page.locator('#booking-inspector h3')).toHaveText('Druk je eigen richting');
   await expect(page.locator('[data-select="druk"]')).toHaveAttribute('aria-pressed','true');
   await expect(page.getByRole('dialog')).not.toBeVisible();
