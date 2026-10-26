@@ -6,7 +6,7 @@ Vier beslissingen met reden, gekozen richting en consequentie. De case ondersche
 
 **Aanname:** een bezoeker wil eerst aanbod vergelijken en pas daarna gegevens invullen. **Keuze:** programma → detail → controle → bevestiging. Titel, tijd, capaciteit en totaalprijs blijven in de relevante stappen zichtbaar. Volzet is een expliciete toestand, niet een foutmelding na invullen.
 
-**Afweging:** de native Figma-route gebruikt schermbrede klikacties om de volgorde te tonen. De webflow heeft echte knoppen, velden, validatie en een lokale voorraad. Daarom is het native prototype geen bewijs voor functionele gegevensverwerking.
+**Afweging:** de native Figma-route gebruikt gerichte knoppen, terugroutes en aparte fout-/volzetpaden, met illustratieve velden en filters. De webflow voegt echte invoervelden, validatie en een lokale voorraad toe. Daarom is het native prototype geen bewijs voor functionele gegevensverwerking.
 
 **Gevolg:** `validateBooking` weigert ongeldige aantallen en een volzette workshop. `createBooking` toetst opnieuw tegen de laatste lokale voorraad, rekent in centen en herhaalt dezelfde bevestiging zonder extra voorraadverbruik. Zie de uitvoerbare tests. Dit is geen transactieve multi-user voorraad.
 

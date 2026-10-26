@@ -86,7 +86,7 @@ PORTFOLIO_URL=https://phlppgdfry.github.io/studio-noord-design-case-study/ npm r
 
 ## Grenzen en volgende stap
 
-Geen interviews, usabilitysessies of conversie-experimenten zijn uitgevoerd. Het [onderzoeksplan](case-study/research-plan.md) is een voorstel. Native overlays en Smart Animate zijn nog geen onderdeel van de geverifieerde case. De native prototypeflow gebruikt schermbrede klikacties; alleen de webflow heeft echte invoervelden en voorraadlogica. De demo-voorraad is per tabblad en biedt geen transactieve multi-user reserveringen. Het live mini-board deelt geen gegevens tussen bezoekers.
+Geen interviews, usabilitysessies of conversie-experimenten zijn uitgevoerd. Het [onderzoeksplan](case-study/research-plan.md) is een voorstel. Native overlays en Smart Animate zijn nog geen onderdeel van de geverifieerde case. De native prototypeflow gebruikt negen gerichte interne klikroutes en een externe koppeling naar de webdemo. Native velden en filters blijven illustratief; de webflow heeft echte invoervelden, validatie en lokale voorraadlogica. De demo-voorraad is per tabblad en biedt geen transactieve multi-user reserveringen. Het live mini-board deelt geen gegevens tussen bezoekers.
 
 Dit werk is bedoeld om product- en ontwerpafwegingen zichtbaar te maken, zonder een functietitel, klantopdracht of businessresultaat te suggereren.
 
